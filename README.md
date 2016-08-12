@@ -64,6 +64,10 @@ Custom karma settings can be add or defaults can be override. Default `carma-tap
   },
 ```
 
+## Projects using `carma-tap-webpack`
+*
+*
+
 ## Contributing
 
 * Documentation improvement
