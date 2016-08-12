@@ -1,0 +1,34 @@
+{
+  "name": "carma-tap-webpack",
+  "version": "0.0.1",
+  "description": "add Karma, Tap and Webpack boilerplate setup files",
+  "main": "karma.conf.js",
+  "keywords": [
+    "carma",
+    "karma",
+    "karma-tap",
+    "tape",
+    "tap",
+    "boilerplate"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "testonly": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint && npm run testonly"
+  },
+  "peerDependencies": {
+    "babel-core": "6.x.x"
+  },
+  "dependencies": {
+    "carma-tap": "bySabi/carma-tap",
+    "karma-webpack": "bySabi/karma-webpack",
+    "babel-loader": "6.x.x",
+    "webpack": "^2.1.0-beta"
+  },
+  "devDependencies": {
+    "eslint": "3.x.x",
+    "eslint-modules-standard-deviation--es5": "1.x.x"
+  },
+  "author": "bySabi Files",
+  "license": "ISC"
+}
