@@ -1,16 +1,14 @@
-# carma-tap
+# carma-tap-webpack
 
-> a Karma and TAP test boilerplate module
-
-> [Karma][karma] settings for `Project` testing using [TAP][tap]
+> add [Karma][karma], [TAP][tap] and [webpack][webpack] boilerplate test settings to projects
 
 [karma]: http://karma-runner.github.io/1.0/index.html
 [tap]: https://testanything.org/
+[webpack]: https://webpack.github.io/
 
 Setting `Karma` with many plugins it is a time consuming process, many hours of trial and error.
 
 ## What's include ?
-* [karma][karma], the test runner.
 * [karma-tap](https://github.com/tmcw-up-for-adoption/karma-tap), karma TAP adapter.
 * [karma-tap-pretty-reporter](https://github.com/bySabi/karma-tap-pretty-reporter) cause everyone need a nice output. See supported [prettifiers](https://github.com/bySabi/karma-tap-pretty-reporter#supported-prettifiers)
 * [tape](https://github.com/substack/tape) for test harness on node and browsers.
@@ -33,7 +31,38 @@ Karma will provide it!
 
 ## Install
 
-WIP
+### npm
+
+```bash
+npm install karma bySabi/carma-tap-webpack --save-dev
+```
+
+### add `karma.conf.js` to project folder
+```js
+var carma = require('carma-tap-webpack');
+
+module.exports = function(config) {
+  carma(config);
+  config.set({
+    // override settings
+  });
+}
+```
+
+Custom karma settings can be add or defaults can be override. Default `carma-tap-webpack` [karma.conf.js][karmaconfjs]
+
+[karmaconfjs]: ./karma.conf.js
+
+### add karma and test scripts to `package.json`
+```json
+  "scripts": {
+    "karma": "karma start",
+    "testonly:jsdom": "cross-env JSDOM=true npm run karma",
+    "testonly:chrome": "npm run karma",
+    "testonly": "npm run testonly:chrome",
+    "test": "npm run testonly"
+  },
+```
 
 ## Contributing
 
