@@ -17,10 +17,19 @@
     "test": "npm run lint && npm run testonly"
   },
   "peerDependencies": {
+    "karma": "1.x.x",
     "babel-core": "6.x.x"
   },
   "dependencies": {
-    "carma-tap": "bySabi/carma-tap",
+    "karma-chrome-launcher": "1.x.x",
+    "karma-jsdom-launcher": "3.x.x",
+    "karma-tap": "2.x.x",
+    "karma-tap-pretty-reporter": "1.x.x",
+    "tape": "4.x.x",
+    "tap-lochnest": "1.x.x",
+    "faucet": "*",
+    "tap-spec": "*",
+
     "karma-webpack": "bySabi/karma-webpack",
     "babel-loader": "6.x.x",
     "webpack": "^2.1.0-beta"
