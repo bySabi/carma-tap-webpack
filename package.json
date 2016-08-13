@@ -25,11 +25,11 @@
     "karma-jsdom-launcher": "3.x.x",
     "karma-tap": "2.x.x",
     "karma-tap-pretty-reporter": "1.x.x",
+    "karma-webpack": "1.x.x",
     "tape": "4.x.x",
     "tap-lochnest": "1.x.x",
     "faucet": "*",
     "tap-spec": "*",
-    "karma-webpack": "bySabi/karma-webpack",
     "babel-loader": "6.x.x",
     "webpack": "^2.1.0-beta",
     "cross-env": "2.x.x"
