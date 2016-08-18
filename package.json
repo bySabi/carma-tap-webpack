@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "karma-chrome-launcher": "1.x.x",
+    "karma-firefox-launcher": "1.x.x",
     "karma-jsdom-launcher": "3.x.x",
     "karma-tap": "2.x.x",
     "karma-tap-pretty-reporter": "1.x.x",
