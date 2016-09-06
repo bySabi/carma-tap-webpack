@@ -5,7 +5,7 @@ var webpack = require('webpack');
 module.exports = function(config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: 'node_modules/carma-tap-webpack',
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
