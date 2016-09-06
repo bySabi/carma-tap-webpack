@@ -1,17 +1,17 @@
 /* global process */
 // Karma configuration
+var webpack = require('webpack');
 
 module.exports = function(config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: './node_modules/carma-tap-webpack',
+    basePath: '',
 
-   // frameworks to use
-   // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    // frameworks to use
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['tap'],
 
     // list of files / patterns to load in the browser
-
     files: [
       'tests.webpack.js'
     ],
@@ -33,17 +33,26 @@ module.exports = function(config) {
       },
       module: {
         // used Babel for test
-        loaders: [
-          {
-            test: /\.jsx?|\.js$/,
-            loader: ['babel-loader?cacheDirectory=true'],
-            exclude: /node_modules/
-          }
-        ]
+        /*
+          loaders: [
+            {
+              test: /\.jsx?|\.js$/,
+              loader: ['babel-loader?cacheDirectory=true'],
+              exclude: /node_modules/
+            },
+          ]
+        */
       },
       node: {
         fs: 'empty'
-      }
+      },
+      plugins: [
+        new webpack.DefinePlugin({
+          'global': {
+            '__TEST_DIR__': JSON.stringify('../../test')
+          }
+        })
+      ]
     },
 
     webpackMiddleware: {

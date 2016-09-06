@@ -12,8 +12,9 @@
     "boilerplate"
   ],
   "scripts": {
+    "karma": "karma start karma.test.conf.js",
     "lint": "eslint . --ext .js",
-    "testonly": "echo \"Error: no test specified\" && exit 1",
+    "testonly": "npm run karma",
     "test": "npm run lint && npm run testonly"
   },
   "peerDependencies": {
@@ -36,7 +37,10 @@
     "cross-env": "2.x.x"
   },
   "devDependencies": {
+    "babel-core": "6.x.x",
+    "karma": "1.x.x",
     "eslint": "3.x.x",
+    "eslint-config-standard-deviation--es5": "1.x.x",
     "eslint-modules-standard-deviation--es5": "1.x.x"
   },
   "author": "bySabi Files",
