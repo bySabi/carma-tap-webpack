@@ -13,7 +13,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'tests1.webpack.js'
+      'tests.webpack.js'
     ],
 
     // list of files to exclude
@@ -24,7 +24,7 @@ module.exports = function(config) {
     // available preprocessors:
     // https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'tests2.webpack.js': ['webpack']
+      'tests.webpack.js': ['webpack']
     },
 
     webpack: {
