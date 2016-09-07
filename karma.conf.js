@@ -26,13 +26,14 @@ module.exports = function(config) {
     preprocessors: {
       'tests.webpack.js': ['webpack']
     },
-
+/*
     webpack: {
       resolve: {
         extensions: ['', '.js', '.jsx', '.json']
       },
       module: {
         // used Babel for test
+*/
         /*
           loaders: [
             {
@@ -42,6 +43,7 @@ module.exports = function(config) {
             },
           ]
         */
+/*
       },
       node: {
         fs: 'empty'
@@ -54,7 +56,7 @@ module.exports = function(config) {
         })
       ]
     },
-
+*/
     webpackMiddleware: {
       noInfo: true
     },
