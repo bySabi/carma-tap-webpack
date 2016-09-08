@@ -28,13 +28,39 @@ module.exports = function(config) {
     },
 
     webpack: {
+      devtool: 'inline-source-map',
+      resolve: {
+        extensions: ['', '.js', '.jsx', '.json']
+      },
       plugins: [
         new webpack.DefinePlugin({
-          'global': {
-            '__TEST_DIR__': JSON.stringify('../../test')
-          }
+          '__TEST_DIR__': JSON.stringify('../../test')
         })
-      ]
+      ],
+      module: {
+        // used Babel for test
+        loaders: [
+          {
+            test: /\.jsx?|\.js$/,
+            loader: 'babel-loader?cacheDirectory=true',
+            exclude: /node_modules/
+          },
+          {
+            test: /\.json$/,
+            loader: 'json-loader',
+            exclude: /node_modules/
+          }
+        ]
+      },
+      externals: {
+        'cheerio': 'window',
+        'react/addons': true,
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true
+      },
+      node: {
+        fs: 'empty'
+      }
     },
 
     webpackMiddleware: {
@@ -86,4 +112,4 @@ module.exports = function(config) {
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: process.env.CONTINUOUS_INTEGRATION === 'true'
   });
-};
+}
