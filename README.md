@@ -75,9 +75,13 @@ module.exports = function(config) {
   config.set({
     webpack: {
       plugins: [
-        // path '../../' is relative to inherited 'basePath' from  'carma'
+        // __TEST_DIR__ path '../../' is relative to inherited 'basePath' from  'carma'
+        // __TEST_REGX__ file pattern match
         new webpack.DefinePlugin({
-          '__TEST_DIR__': JSON.stringify('../../' + 'spec')
+          global: {
+            '__TEST_DIR__': JSON.stringify('../../' + 'spec'),
+            '__TEST_REGX__': /^.+\.(js|jsx)+$/g
+          }
         })
       ]
     }
