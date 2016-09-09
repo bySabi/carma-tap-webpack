@@ -34,7 +34,7 @@ Karma will provide it!
 ### npm
 
 ```bash
-npm install karma bySabi/carma-tap-webpack --save-dev
+npm install karma webpack bySabi/carma-tap-webpack --save-dev
 ```
 
 ### add `karma.conf.js` to project folder
@@ -43,9 +43,6 @@ var carma = require('carma-tap-webpack');
 
 module.exports = function(config) {
   carma(config);
-  config.set({
-    // override settings
-  });
 }
 ```
 
@@ -64,9 +61,33 @@ Custom karma settings can be add or defaults can be override. Default `carma-tap
   },
 ```
 
+## Test directory
+By default karma will search test files on root `test` folder. Test folder can be customize.
+
+Example of project´s `karma.conf.js`:
+```
+const carma = require('carma-tap-webpack');
+const webpack = require('webpack');
+
+module.exports = function(config) {
+  carma(config);
+  // overriding inherited settings
+  config.set({
+    webpack: {
+      plugins: [
+        // path '../../' is relative to inherited 'basePath' from  'carma'
+        new webpack.DefinePlugin({
+          '__TEST_DIR__': JSON.stringify('../../' + 'spec')
+        })
+      ]
+    }
+  });
+}
+```
+
 ## Projects using `carma-tap-webpack`
-*
-*
+* [React Scrollchor](https://github.com/bySabi/react-scrollchor)
+* [React Scrollaware](https://github.com/bySabi/react-scrollaware)
 
 ## Contributing
 

@@ -1,2 +1,9 @@
+CHANGELOG.md
+CONTRIBUTING.md
+test
+karma.conf.js
+karma.test.conf.js
+.babelrc
 .eslintignore
 .eslintrc.js
+.travis.yml

@@ -1,6 +1,6 @@
 {
   "name": "carma-tap-webpack",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "add Karma, Tap and Webpack boilerplate setup files",
   "main": "karma.conf.js",
   "keywords": [
@@ -9,7 +9,8 @@
     "karma-tap",
     "tape",
     "tap",
-    "boilerplate"
+    "boilerplate",
+    "webpack"
   ],
   "scripts": {
     "karma": "karma start karma.test.conf.js",
@@ -19,9 +20,11 @@
   },
   "peerDependencies": {
     "karma": "1.x.x",
-    "babel-core": "6.x.x"
+    "babel-core": "6.x.x",
+    "webpack": "^1.1.0 || ^2 || ^2.1.0-beta",
   },
   "dependencies": {
+    "babel-loader": "6.x.x",
     "karma-chrome-launcher": "1.x.x",
     "karma-firefox-launcher": "1.x.x",
     "karma-jsdom-launcher": "3.x.x",
@@ -33,9 +36,8 @@
     "tap-lochnest": "1.x.x",
     "faucet": "*",
     "tap-spec": "*",
-    "babel-loader": "6.x.x",
     "json-loader": "*",
-    "webpack": "^2.1.0-beta",
+    "webpack-dev-middleware": "1.x.x",
     "cross-env": "2.x.x"
   },
   "devDependencies": {
@@ -43,7 +45,8 @@
     "karma": "1.x.x",
     "eslint": "3.x.x",
     "eslint-config-standard-deviation--es5": "1.x.x",
-    "eslint-modules-standard-deviation--es5": "1.x.x"
+    "eslint-modules-standard-deviation--es5": "1.x.x",
+    "webpack": "^2.1.0-beta"
   },
   "author": "bySabi Files",
   "license": "ISC"

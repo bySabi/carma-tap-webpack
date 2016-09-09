@@ -51,6 +51,7 @@ module.exports = function(config) {
           }
         ]
       },
+      // settings for React and Enzyme
       externals: {
         'cheerio': 'window',
         'react/addons': true,
