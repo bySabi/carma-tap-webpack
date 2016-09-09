@@ -33,10 +33,9 @@ module.exports = function(config) {
       },
       plugins: [
         new webpack.DefinePlugin({
-          global: {
-            '__TEST_DIR__': JSON.stringify('../../test'),
-            '__TEST_REGX__': /^.+\.(js|jsx)+$/g
-          }
+          '__TEST_DIR__': JSON.stringify('../../test'),
+       //   '__TEST_REGX__': JSON.stringify(/^.+\.(js|jsx)+$/g)
+        '__TEST_REGX__': /^.+\.(js|jsx)+$/g
         })
       ],
       module: {
