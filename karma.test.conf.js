@@ -8,8 +8,8 @@ module.exports = function(config) {
     webpack: {
       plugins: [
         new webpack.DefinePlugin({
-            '__TEST_DIR__': JSON.stringify('./test'),
-            '__TEST_REGX__': /^.+\.(js|jsx)+$/g
+          '__TEST_DIR__': JSON.stringify('./test'),
+          '__TEST_REGX__': /^.+\.(js|jsx)+$/g
         })
       ]
     }
