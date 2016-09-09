@@ -1,5 +1,7 @@
 # carma-tap-webpack
 
+[![Build Status](https://travis-ci.org/bySabi/carma-tap-webpack.svg?branch=master)](https://travis-ci.org/bySabi/carma-tap-webpack)
+
 > add [Karma][karma], [TAP][tap] and [webpack][webpack] boilerplate test settings to projects
 
 [karma]: http://karma-runner.github.io/1.0/index.html
