@@ -1,6 +1,25 @@
 /* global process */
-// Karma configuration
-var webpack = require('webpack');
+const webpack = require('webpack');
+const path = require('path');
+const isDirectory = require('is-directory');
+
+const TESTFOLDER = [
+  '../../test',
+  '../../tests',
+  '../../spec',
+  '../../specs'
+];
+
+function getTestPath(basePath) {
+  let testPath;
+  TESTFOLDER.some(function(i) {
+    const folder = path.join(__dirname, basePath, i);
+    if (isDirectory.sync(folder)) {
+      return (testPath = JSON.stringify(i));
+    }
+  });
+  return testPath;
+}
 
 module.exports = function(config) {
   config.set({
@@ -34,7 +53,7 @@ module.exports = function(config) {
       },
       plugins: [
         new webpack.DefinePlugin({
-          '__TEST_DIR__': JSON.stringify('../../test')
+          '__TEST_DIR__': getTestPath('node_modules/carma-tap-webpack')
         })
       ],
       module: {
@@ -63,6 +82,7 @@ module.exports = function(config) {
       }
     },
 
+    // don't spam the console when running in karma!
     webpackMiddleware: {
       noInfo: true
     },

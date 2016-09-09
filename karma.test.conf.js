@@ -1,5 +1,5 @@
-var carma = require('./');
-var webpack = require('webpack');
+const carma = require('./');
+const webpack = require('webpack');
 
 module.exports = function(config) {
   carma(config);

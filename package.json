@@ -22,10 +22,11 @@
     "babel-core": "6.x.x"
   },
   "dependencies": {
+    "is-directory": "*",
     "karma-chrome-launcher": "1.x.x",
     "karma-firefox-launcher": "1.x.x",
     "karma-jsdom-launcher": "3.x.x",
-    "karma-tap": "2.x.x",
+    "karma-tap": "3.x.x",
     "karma-tap-pretty-reporter": "1.x.x",
     "karma-sourcemap-loader": "*",
     "karma-webpack": "1.x.x",
