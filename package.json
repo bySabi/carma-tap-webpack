@@ -22,7 +22,6 @@
     "babel-core": "6.x.x"
   },
   "dependencies": {
-    "is-directory": "*",
     "karma-chrome-launcher": "1.x.x",
     "karma-firefox-launcher": "1.x.x",
     "karma-jsdom-launcher": "3.x.x",
