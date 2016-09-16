@@ -1,6 +1,9 @@
 # carma-tap-webpack
 
+[![npm version](https://badge.fury.io/js/carma-tap-webpack.svg)](https://badge.fury.io/js/carma-tap-webpack)
+[![npm downloads](https://img.shields.io/npm/dm/carma-tap-webpack.svg?style=flat-square)](https://www.npmjs.com/package/carma-tap-webpack)
 [![Build Status](https://travis-ci.org/bySabi/carma-tap-webpack.svg?branch=master)](https://travis-ci.org/bySabi/carma-tap-webpack)
+[![Known Vulnerabilities](https://snyk.io/test/github/bysabi/carma-tap-webpack/badge.svg)](https://snyk.io/test/github/bysabi/carma-tap-webpack)
 
 > add [Karma][karma], [TAP][tap] and [webpack][webpack] boilerplate test settings to projects
 
