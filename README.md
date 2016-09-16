@@ -13,7 +13,7 @@
 
 Setting `Karma` with many plugins it is a time consuming process, many hours of trial and error. Now you got all for free.
 
-## This package works only on `npm 3` environments and beyond. Don´t use it on `npm 2` 
+> This package works only on `npm 3` environments and beyond. Don´t use it with `npm 2` 
 
 ## What's include ?
 * [karma-tap](https://github.com/tmcw-up-for-adoption/karma-tap), karma TAP adapter.
