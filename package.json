@@ -1,6 +1,6 @@
 {
   "name": "carma-tap-webpack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "add Karma, Tap and Webpack boilerplate setup files",
   "main": "karma.conf.js",
   "keywords": [
