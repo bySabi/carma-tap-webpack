@@ -104,6 +104,14 @@ module.exports = function(config) {
       terminal: false
     },
 
+    // custom browser launchers
+    customLaunchers: {
+      'Chrome_ci': {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
+
     // start these browsers
     // available browser launchers:
     // https://npmjs.org/browse/keyword/karma-launcher
