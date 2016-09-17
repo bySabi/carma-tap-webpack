@@ -1,6 +1,6 @@
 {
   "name": "carma-tap-webpack",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "add Karma, Tap and Webpack boilerplate setup files",
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "babel-loader": "6.x.x",
+    "json-loader": "*",
     "karma-chrome-launcher": "1.x.x",
     "karma-firefox-launcher": "1.x.x",
     "karma-jsdom-launcher": "3.x.x",
@@ -41,12 +42,9 @@
     "karma-sourcemap-loader": "*",
     "karma-webpack": "1.x.x",
     "tape": "4.x.x",
-    "tap-lochnest": "1.x.x",
     "faucet": "*",
     "tap-spec": "*",
-    "json-loader": "*",
-    "webpack-dev-middleware": "1.x.x",
-    "cross-env": "2.x.x"
+    "webpack-dev-middleware": "1.x.x"
   },
   "devDependencies": {
     "babel-core": "6.x.x",

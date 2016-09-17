@@ -11,7 +11,7 @@
 [tap]: https://testanything.org/
 [webpack]: https://webpack.github.io/
 
-Setting `Karma` with many plugins it is a time consuming process, many hours of trial and error. Now you have it all for free.
+Setting `Karma` with many plugins it´s a time consuming process, many hours of trial and error. Now you have it all for free.
 
 #### This package works only on `npm 3` environments and beyond. Don´t use it with `npm 2`
 
@@ -19,7 +19,6 @@ Setting `Karma` with many plugins it is a time consuming process, many hours of 
 * [karma-tap](https://github.com/tmcw-up-for-adoption/karma-tap), karma TAP adapter.
 * [karma-tap-pretty-reporter](https://github.com/bySabi/karma-tap-pretty-reporter) cause everyone need a nice output. See supported [prettifiers](https://github.com/bySabi/karma-tap-pretty-reporter#supported-prettifiers)
 * [tape](https://github.com/substack/tape) for test harness on node and browsers.
-* [tap-lochness](https://github.com/bySabi/tap-lochnest) for nested TAP test.
 * karma browser launchers `karma-chrome-launcher`, `karma-jsdom-launcher`, ...
 * [webpack](https://webpack.github.io/) and [karma-webpack](https://github.com/webpack/karma-webpack)
 
@@ -39,12 +38,11 @@ Karma will provide it!
 ## Install
 
 ### npm
-
 ```bash
 npm install karma webpack carma-tap-webpack --save-dev
 ```
 
-### add `karma.conf.js` to project folder
+### Add `karma.conf.js` to project folder
 ```js
 const carma = require('carma-tap-webpack');
 
@@ -53,7 +51,7 @@ module.exports = function(config) {
 }
 ```
 
-Custom karma settings can be added or defaults can be override. Defaults `carma-tap-webpack` [karma.conf.js][karmaconfjs]
+Custom karma settings can be added or defaults can be override. Defaults settings [karma.conf.js][karmaconfjs]
 
 [karmaconfjs]: ./karma.conf.js
 
@@ -61,17 +59,15 @@ Custom karma settings can be added or defaults can be override. Defaults `carma-
 ```json
   "scripts": {
     "karma": "karma start",
-    "testonly-jsdom": "cross-env JSDOM=true npm run karma",
-    "testonly-chrome": "npm run karma",
-    "testonly": "npm run testonly-chrome",
+    "testonly": "npm run karma",
     "test": "npm run testonly"
   },
 ```
 
 ## Test directory
-By default karma will search test files in root project `test` folder but tests folder can be customize.
+By default Karma will search for files on project root `test` folder but this can be customize.
 
-Example of project's `karma.conf.js`
+Example of project´s `karma.conf.js`
 ```
 const carma = require('carma-tap-webpack');
 const webpack = require('webpack');
@@ -79,6 +75,9 @@ const webpack = require('webpack');
 module.exports = function(config) {
   carma(config);
   config.set({  // overriding inherited settings
+    // Set browser launcher
+    browsers: process.env.CONTINUOUS_INTEGRATION === 'true' ? ['Firefox'] : ['jsdom'],
+
     webpack: {
       plugins: [
         // __TEST_DIR__ path '../../' is relative to inherited 'basePath' from  'carma'
