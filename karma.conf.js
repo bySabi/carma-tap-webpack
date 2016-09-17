@@ -106,6 +106,7 @@ module.exports = function(config) {
 
     // custom browser launchers
     customLaunchers: {
+      // chrome settings for CI, Ex: 'Travis'
       'Chrome_ci': {
         base: 'Chrome',
         flags: ['--no-sandbox']
