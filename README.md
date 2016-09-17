@@ -61,9 +61,9 @@ Custom karma settings can be added or defaults can be override. Defaults `carma-
 ```json
   "scripts": {
     "karma": "karma start",
-    "testonly:jsdom": "cross-env JSDOM=true npm run karma",
-    "testonly:chrome": "npm run karma",
-    "testonly": "npm run testonly:chrome",
+    "testonly-jsdom": "cross-env JSDOM=true npm run karma",
+    "testonly-chrome": "npm run karma",
+    "testonly": "npm run testonly-chrome",
     "test": "npm run testonly"
   },
 ```
