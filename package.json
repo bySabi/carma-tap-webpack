@@ -1,8 +1,13 @@
 {
   "name": "carma-tap-webpack",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "add Karma, Tap and Webpack boilerplate setup files",
-  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bySabi/carma-tap-webpack.git"
+  },
+  "homepage": "https://github.com/bySabi/carma-tap-webpack.git",
+  "bugs": "https://github.com/bySabi/carma-tap-webpack/issues",
   "keywords": [
     "carma",
     "karma",
@@ -10,8 +15,11 @@
     "tape",
     "tap",
     "boilerplate",
-    "webpack"
+    "webpack",
+    "test",
+    "react"
   ],
+  "main": "karma.conf.js",
   "scripts": {
     "karma": "karma start karma.test.conf.js",
     "lint": "eslint . --ext .js",
