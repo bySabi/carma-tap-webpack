@@ -72,7 +72,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['tap-pretty'],
+    reporters: ['tap-pretty', 'coverage'],
 
     // prettifier's: 'faucet', 'tap-spec', 'tap-min', 'tap-diff',
     // 'tap-notify', 'tap-summary', 'tap-markdown'
@@ -80,6 +80,25 @@ module.exports = function(config) {
       // outputFile: './unit.tap',
       prettifier: 'faucet',
       separator: true
+    },
+
+    coverageReporter: {
+      dir: 'coverage/',
+      reporters: [
+        {
+          type: 'html',
+          subdir: 'report-html'
+        },
+        {
+          type: 'lcov',
+          subdir: 'report-lcov'
+        },
+        {
+          type: 'cobertura',
+          subdir: '.',
+          file: 'cobertura.txt'
+        }
+      ]
     },
 
     // web server port
