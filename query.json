@@ -1,6 +1,5 @@
 {
   "cacheDirectory": "true",
-  "babelrc": "false",
   "presets": ["es2015", "stage-3"],
   "env": {
     "test": {
