@@ -1,4 +1,6 @@
 {
+  "cacheDirectory": "true",
+  "babelrc": "false",
   "presets": ["es2015", "stage-3"],
   "env": {
     "test": {
@@ -9,7 +11,5 @@
         ["es2015", { "loose": true, "modules": false }]
       ]
     }
-  },
-  "cacheDirectory": "true",
-  "babelrc": "false"
+  }
 }
