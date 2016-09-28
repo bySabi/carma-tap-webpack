@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const babelLoaderQuery = require('./babel');
+const babelLoaderQuery = require('./babel.js');
 
 process.env.BABEL_ENV = 'test';
 
