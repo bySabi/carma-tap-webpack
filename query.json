@@ -1,6 +1,6 @@
 {
   "cacheDirectory": "true",
-  "presets": ["es2015", "stage-3"],
+  "presets": ["es2015"],
   "env": {
     "test": {
       "plugins": ["istanbul"]
