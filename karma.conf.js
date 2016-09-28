@@ -1,10 +1,15 @@
-/* global process */
 const webpack = require('webpack');
+const babelLoaderQuery = require('./babel');
+
+process.env.BABEL_ENV = 'test';
+
+const carmaPath = 'node_modules/carma-tap-webpack';
 
 module.exports = function(config) {
+  const basePath = '';
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: 'node_modules/carma-tap-webpack',
+    basePath: basePath,
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -12,7 +17,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'tests.webpack.js'
+      'node_modules/carma-tap-webpack/tests.webpack.js'
     ],
 
     // list of files to exclude
@@ -23,11 +28,12 @@ module.exports = function(config) {
     // available preprocessors:
     // https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'tests.webpack.js': ['webpack', 'sourcemap']
+      'node_modules/carma-tap-webpack/tests.webpack.js': ['webpack', 'sourcemap']
     },
 
     webpack: {
       devtool: 'inline-source-map',
+      //all these extensions will be resolved without specifying extension in the `require`
       resolve: {
         extensions: ['', '.js', '.jsx', '.json']
       },
@@ -42,13 +48,15 @@ module.exports = function(config) {
         loaders: [
           {
             test: /\.jsx?|\.js$/,
-            loader: 'babel-loader?cacheDirectory=true',
-            exclude: /node_modules/
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+           // query: babelLoaderQuery({ basePath: '.' })
+            query: babelLoaderQuery({ basePath: '.' })
           },
           {
             test: /\.json$/,
-            loader: 'json-loader',
-            exclude: /node_modules/
+            exclude: /node_modules/,
+            loader: 'json-loader'
           }
         ]
       },

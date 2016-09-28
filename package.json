@@ -24,6 +24,7 @@
     "karma": "karma start karma.test.conf.js",
     "lint": "eslint . --ext .js",
     "testonly": "npm run karma",
+    "cover": "cross-env NODE_ENV=test",
     "test": "npm run lint && npm run testonly"
   },
   "peerDependencies": {
@@ -32,8 +33,10 @@
     "webpack": "^1.1.0 || ^2 || ^2.1.0-beta"
   },
   "dependencies": {
+    "babel-plugin-istanbul": "2.x.x",
     "babel-loader": "6.x.x",
     "json-loader": "*",
+    "json5": "*",
     "karma-chrome-launcher": "1.x.x",
     "karma-firefox-launcher": "1.x.x",
     "karma-jsdom-launcher": "3.x.x",
@@ -42,10 +45,10 @@
     "karma-sourcemap-loader": "*",
     "karma-coverage": "1.x.x",
     "karma-webpack": "1.x.x",
-    "istanbul-instrumenter-loader": "1.x.x",
     "tape": "4.x.x",
     "faucet": "*",
     "tap-spec": "*",
+    "traverse": "*",
     "webpack-dev-middleware": "1.x.x"
   },
   "devDependencies": {
