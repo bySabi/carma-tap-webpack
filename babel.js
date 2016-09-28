@@ -54,7 +54,7 @@ function updateOptions(babelConfig, babelExtend) {
 
 function updateOptions(babelConfig, babelExtend) {
   const obj = Object.assign({}, babelConfig, babelExtend);
-  console.log(obj);
+ // console.log(obj);
   return Object.assign({}, babelConfig, babelExtend);
 }
 
