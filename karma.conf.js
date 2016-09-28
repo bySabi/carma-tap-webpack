@@ -33,7 +33,7 @@ module.exports = function(config) {
 
     webpack: {
       devtool: 'inline-source-map',
-      //all these extensions will be resolved without specifying extension in the `require`
+      // all these extensions will be resolved without specifying extension in the `require`
       resolve: {
         extensions: ['', '.js', '.jsx', '.json']
       },
