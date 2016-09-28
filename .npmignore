@@ -1,7 +1,6 @@
 CHANGELOG.md
 CONTRIBUTING.md
 test
-karma.conf.js
 karma.test.conf.js
 .eslintignore
 .eslintrc.js
