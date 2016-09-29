@@ -53,7 +53,7 @@ module.exports = function(config) {
            // query: babelLoaderQuery({ basePath: '.' })
            // query: babelLoaderQuery({ basePath: '.' })
            query: {
-            babelrc: true,
+           // babelrc: true,
             presets: ['es2015']
            }
           },
