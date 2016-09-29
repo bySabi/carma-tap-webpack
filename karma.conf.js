@@ -51,7 +51,11 @@ module.exports = function(config) {
             exclude: /node_modules/,
             loader: 'babel-loader',
            // query: babelLoaderQuery({ basePath: '.' })
-            query: babelLoaderQuery({ basePath: '.' })
+           // query: babelLoaderQuery({ basePath: '.' })
+           query: {
+            babelrc: false,
+            preset: ['es2015']
+           }
           },
           {
             test: /\.json$/,
