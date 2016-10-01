@@ -1,15 +1,11 @@
-const webpack = require('webpack');
-const babelLoaderQuery = require('./babel.js');
+const webpackConfig = require('./webpack.config');
 
 process.env.BABEL_ENV = 'test';
 
-const carmaPath = 'node_modules/carma-tap-webpack';
-
 module.exports = function(config) {
-  const basePath = '';
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: basePath,
+    basePath: '',
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -31,50 +27,13 @@ module.exports = function(config) {
       'node_modules/carma-tap-webpack/tests.webpack.js': ['webpack', 'sourcemap']
     },
 
-    webpack: {
-      devtool: 'inline-source-map',
-      // all these extensions will be resolved without specifying extension in the `require`
-      resolve: {
-        extensions: ['*', '.js', '.jsx', '.json']
-      },
-      plugins: [
-        new webpack.DefinePlugin({
-          '__TEST_DIR__': JSON.stringify('../../test'),
-          '__TEST_REGX__': /^.+\.(js|jsx)+$/g
-        })
-      ],
-      module: {
-        // used Babel for test
-        loaders: [
-          {
-            test: /\.jsx?|\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-           // query: babelLoaderQuery({ basePath: '.' })
-           // query: babelLoaderQuery({ basePath: '.' })
-           query: {
-            babelrc: true,
-            presets: ['es2015']
-           }
-          },
-          {
-            test: /\.json$/,
-            exclude: /node_modules/,
-            loader: 'json-loader'
-          }
-        ]
-      },
-      // settings for React and Enzyme
-      externals: {
-        'cheerio': 'window',
-        'react/addons': true,
-        'react/lib/ExecutionEnvironment': true,
-        'react/lib/ReactContext': true
-      },
-      node: {
-        fs: 'empty'
-      }
+    //
+    client: {
+      captureConsole: true
     },
+
+    // webpack settings
+    webpack: webpackConfig,
 
     // don't spam the console when running in karma!
     webpackMiddleware: {
@@ -84,7 +43,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['tap-pretty', 'coverage'],
+    reporters: ['tap-pretty'],
 
     // prettifier's: 'faucet', 'tap-spec', 'tap-min', 'tap-diff',
     // 'tap-notify', 'tap-summary', 'tap-markdown'
@@ -92,25 +51,6 @@ module.exports = function(config) {
       // outputFile: './unit.tap',
       prettifier: 'faucet',
       separator: true
-    },
-
-    coverageReporter: {
-      dir: 'coverage/',
-      reporters: [
-        {
-          type: 'html',
-          subdir: 'report-html'
-        },
-        {
-          type: 'lcov',
-          subdir: 'report-lcov'
-        },
-        {
-          type: 'cobertura',
-          subdir: '.',
-          file: 'cobertura.txt'
-        }
-      ]
     },
 
     // web server port
