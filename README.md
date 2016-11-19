@@ -68,7 +68,7 @@ Custom karma settings can be added or defaults can be override. Defaults setting
 By default Karma will search for files on project root `test` folder but this can be customize.
 
 Example of project´s `karma.conf.js`
-```
+```js
 const carma = require('carma-tap-webpack');
 const webpack = require('webpack');
 
