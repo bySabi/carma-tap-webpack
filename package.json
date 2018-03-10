@@ -33,7 +33,7 @@
     "webpack": "^1.1.0 || ^2 || ^2.1.0-beta"
   },
   "dependencies": {
-    "babel-plugin-istanbul": "2.x.x",
+    "babel-plugin-istanbul": "4.0.0",
     "babel-loader": "6.x.x",
     "json-loader": "*",
     "json5": "*",
