@@ -44,7 +44,7 @@
     "karma-tap-pretty-reporter": "1.x.x",
     "karma-sourcemap-loader": "*",
     "karma-coverage": "1.x.x",
-    "karma-webpack": "1.x.x",
+    "karma-webpack": "2.0.10",
     "tape": "4.x.x",
     "faucet": "*",
     "tap-spec": "*",
